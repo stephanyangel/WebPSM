@@ -1,0 +1,349 @@
+/* =========================================
+   SEVICES PAGE 
+   ========================================= */
+
+.service-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px; /* Jarak antar kotak layanan */
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Bayangan lembut */
+    transition: transform 0.3s ease;
+}
+
+.service-row:hover {
+    transform: translateY(-5px);
+}
+
+/* Membalik urutan flex khusus untuk div dengan class 'reverse' */
+.service-row.reverse {
+    flex-direction: row-reverse; 
+}
+
+.service-img-box {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.service-img-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.service-row:hover .service-img-box img {
+    transform: scale(1.05); /* Efek zoom tipis pada gambar */
+}
+
+.service-desc {
+    flex: 1;
+}
+
+.service-desc h2 {
+    font-size: 28px;
+    color: #2B5490;
+    margin-bottom: 20px; /* <-- UBAH INI: Dari 10px jadi 20px atau 25px biar makin jauh */
+}
+
+.service-desc p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    margin-top: 10px; /* <-- TAMBAH INI: Biar paragrafnya agak turun menjauh dari judul */
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.service-features li {
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-features i {
+    color: #6C8EBF; /* Warna centang */
+    font-size: 14px;
+}
+
+/* Tombol ke halaman proyek */
+.btn-outline-blue {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #2B5490;
+    color: #2B5490;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-blue:hover {
+    background-color: #2B5490;
+    color: white;
+    gap: 15px; /* Panah bergeser sedikit */
+}
+
+.btn-outline-blue i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.btn-outline-blue:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .service-row, .service-row.reverse {
+        flex-direction: column; /* Gambar dan teks ditumpuk atas-bawah */
+        padding: 20px;
+        gap: 30px;
+    }
+    .service-img-box img {
+        height: 250px;
+    }
+}
+
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+/* Hero Section */
+.hero {
+    background-color: #6C8EBF;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+/* Kategori Proyek */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.project-category {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.project-category h2 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #444040;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* Grid Kartu */
+/* --- WADAH UTAMA (MASONRY STYLE) --- */
+.grid-container {
+    display: block !important; /* 🛑 WAJIB: Hapus display: grid atau flex! */
+    column-count: 3; /* Bagi jadi 3 kolom */
+    column-gap: 20px; /* Jarak antar kolom */
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* --- KARTU PROYEK --- */
+
+.card {
+    display: inline-block; /* 🛑 WAJIB: Biar dia bisa ngalir ke bawah */
+    width: 100%;
+    break-inside: avoid; /* Biar kartu nggak terpotong pas pindah kolom */
+    margin-bottom: 20px; /* Jarak bawah antar kartu */
+    
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: scale(1.02); /* Efek zoom dikit pas disentuh */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* --- GAMBAR (TAMPIL UTUH TANPA WRAPPER TINGGI) --- */
+.card img {
+    width: 100%;
+    height: auto !important; /* 🛑 WAJIB: Biar tinggi ngikutin foto asli */
+    display: block;
+}
+
+/* --- TEKS DESKRIPSI --- */
+.card-title {
+    padding: 15px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* --- RESPONSIF BIAR PAS DI HP --- */
+@media (max-width: 900px) {
+    .grid-container { column-count: 2; } /* 2 Kolom di Tablet */
+}
+
+@media (max-width: 600px) {
+    .grid-container { column-count: 1; } /* 1 Kolom di HP */
+}
+
+/* ========================================================
+   SUPPORTED FACILITIES STYLING 
+   ======================================================== */
+
+.facilities-section {
+    padding: 80px 20px;
+    background-color: #f8fafc; /* Abu-abu super muda biar elegan */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- TABS BUTTON (Tombol Office / Manufacturing) --- */
+.tabs-header {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+    background-color: transparent;
+    border: 2px solid #cbd5e1;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Warna saat tombol disorot atau sedang aktif (diklik) */
+.tab-btn:hover, 
+.tab-btn.active {
+    background-color: #2B5490;
+    color: #ffffff;
+    border-color: #2B5490;
+    box-shadow: 0 4px 10px rgba(43, 84, 144, 0.2);
+}
+
+/* --- TABS CONTENT (Isi dari masing-masing tab) --- */
+.tab-content {
+    display: none; /* Sembunyikan semua isi tab secara default */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Jurus bagi 3 kolom otomatis */
+    gap: 30px;
+    animation: fadeIn 0.5s ease-in-out; /* Efek transisi halus saat ganti tab */
+}
+
+/* Hanya tampilkan tab yang ada class 'active' */
+.tab-content.active {
+    display: grid; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- CARD FASILITAS (Kotak Foto & Teks) --- */
+.facility-grid {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Biar ujung foto ikut melengkung ngikutin kotak */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.facility-grid:hover {
+    transform: translateY(-8px); /* Efek loncat dikit pas disorot */
+    box-shadow: 0 15px 30px rgba(43, 84, 144, 0.15);
+}
+
+/* Styling Foto di dalam Card */
+.facility-grid img {
+    width: 100%;
+    height: 220px; /* Seragamkan tinggi semua foto */
+    object-fit: cover; /* Biar foto nggak gepeng */
+    border-bottom: 3px solid #2B5490; /* Garis aksen pemisah foto dan teks */
+}
+
+/* Kotak Teks */
+.facility-text {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.facility-text h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.facility-text p {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Dorong list ke bawah kalau teks pendek */
+}
+
+/* Styling List (Bullet Points) */
+.facility-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.facility-text ul li {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start; /* Sejajarkan ikon centang dengan baris pertama teks */
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.text-blue {
+    color: #2B5490;
+    font-size: 14px;
+    margin-top: 3px; /* Turunin ikon dikit biar pas tengah huruf */
+}

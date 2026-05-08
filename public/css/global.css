@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Mencegah layar bisa digeser ke samping */
+}
+
+/*========================================================
+    NAVBAR STYLING 
+  ======================================================== */
+
+/* --- STYLING KHUSUS LOGO DUA FRAME --- */
+.logo-wrapper {
+    display: flex !important;
+    align-items: center !important; /* Sejajarkan logo bulat dan teks ke tengah */
+    gap: 12px; /* Jarak antara logo bulat dan teks */
+    text-decoration: none;
+}
+
+.logo-circle {
+    height: 50px !important; 
+    width: 50px !important;
+    object-fit: contain !important; /* Biar tetap bulat sempurna */
+    border-radius: 0 !important; /* Bersihin efek sisa */
+}
+
+.logo-name-rect {
+    height: 40px !important; /* Lebih pendek dikit dari logo bulat biar estetik */
+    width: auto !important; /* Lebar otomatis ngikutin proporsi asli */
+    max-width: 300px !important;
+    object-fit: contain !important; /* Jurus anti gepeng */
+    
+    /* 👇 INI DIA OBAT ANTI BULETNYA! 👇 */
+    border-radius: 0 !important; 
+    background-color: transparent !important; 
+}
+
+/* --- NAVBAR RESPONSIVE --- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #0088cc;
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a.active {
+    color: #4a7bb2;
+    border-bottom: 2px solid #4a7bb2;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: #4a7bb2;
+}
+
+.btn-contact {
+    text-decoration: none;
+    border: 1px solid #2B5490;
+    color: #2B5490;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #2B5490;
+    color: #fff;
+}
+
+.btn-contact:hover {
+    background-color: #2B5490;
+    color: #ffffff;
+}
+
+*{
+    margin: 15;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sembunyikan ikon hamburger di layar laptop/desktop */
+.hamburger {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #2B5490;
+    cursor: pointer;
+}
+
+/* nav-menu formatnya sejajar di laptop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- STYLING NAV LINKS & EFEK UNIK (DESKTOP) --- */
+.nav-links {
+    display: flex;
+    gap: 30px; /* Jarak antar menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #2B5490; /* Warna biru PT PSM */
+}
+
+/* JURUS UNIK 1: Animasi Garis Bawah Mengalir */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #2B5490;
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Garisnya memanjang full pas di-hover */
+}
+
+/* JURUS UNIK 2: Efek Ditekan (Tactile Feedback) saat diklik */
+.nav-links a:active {
+    transform: scale(0.92);
+}
+
+/* --- RESPONSIVE PHONE --- */
+@media (max-width: 768px) {
+    /* Pembagian kanan kiri */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        position: relative;
+        z-index: 999;
+    }
+
+    /* Batasi ruang logo biar nggak ngambil jatah tombol hamburger */
+    .logo {
+        max-width: 75%; /* Dikecilin dikit biar aman */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Penyesuaian Logo Dua Frame khusus untuk layar HP */
+    .logo-wrapper {
+        gap: 8px !important; /* Jarak dirapetin di HP */
+    }
+
+    .logo-circle {
+        height: 35px !important;
+        width: 35px !important;
+    }
+
+    .logo-name-rect {
+        height: 28px !important;
+        max-width: 150px !important; /* Batas panjang maksimal biar ga nabrak tombol garis tiga */
+        width: auto !important;
+        border-radius: 0 !important; /* Jaga-jaga di HP juga dikunci anti bulet */
+    }
+
+    /* 1. Gedein dikit icon burgernya biar gampang dipencet */
+    .hamburger {
+        display: block;
+        font-size: 28px; 
+        padding: 5px; 
+    }
+
+    /* Ubah menu jadi menurun ke bawah dan sembunyikan */
+    .nav-menu {
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column; 
+        padding: 10px 0 30px 0; 
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-links {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+/* 2. BIAR GAMPANG DIKLIK & LEBIH UNIK DI HP */
+    .nav-links a {
+        position: relative;
+        width: 100%; 
+        text-align: center; 
+        padding: 18px 20px; 
+        margin: 0; 
+        font-size: 18px; 
+        font-weight: 600;
+        border-bottom: 1px solid #f0f0f0; 
+        color: #333;
+        overflow: hidden; /* Penting untuk efek slide background */
+        z-index: 1;
+        transition: color 0.3s ease, transform 0.1s ease;
+    }
+
+    .nav-links a::after {
+        display: none; 
+    }
+
+    .nav-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%; /* Sembunyi di luar layar kiri */
+        width: 100%;
+        height: 100%;
+        background-color: #eef4fc; /* Warna biru super muda */
+        z-index: -1;
+        transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transisi mulus banget */
+    }
+
+    /* Trigger pas disentuh / ditahan di HP */
+    .nav-links a:hover::before, 
+    .nav-links a:active::before {
+        left: 0; /* Backgroundnya masuk menuhin kotak */
+    }
+
+    .nav-links a:hover, 
+    .nav-links a:active {
+        color: #2B5490;
+    }
+
+    /* Efek mendelep dikit pas disentuh jarinya */
+    .nav-links a:active {
+        transform: scale(0.98);
+    }
+
+    /* Efek warna pas disentuh */
+    .nav-links a:active, .nav-links a:hover {
+        background-color: #f8fafc;
+        color: #2B5490;
+    }
+    
+
+    /* 3. Tombol Contact Us [Tebel] */
+    .btn-contact {
+        display: block;
+        text-align: center;
+        width: 80%; 
+        margin: 25px auto 0 auto; 
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 30px; 
+    }
+}
+
+/* =========================================
+   FOOTER STYLING 
+   ========================================= */
+
+/* 1. Bagian Luar: Background biru full layar */
+.footer {
+    background-color: #274b89; 
+    color: #ffffff;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Bagian Dalam: Pakai Grid biar otomatis bagi 4 kolom rapi */
+.footer-container {
+    max-width: 1200px; /* Agak dilebarin dikit dari 1000px biar 4 menu muat */
+    margin: 0 auto;    
+    padding: 60px 20px; 
+    display: grid;
+    /* Proporsi Sakti: Kiri lebar (2), Tengah pas (1), Tengah pas (1), Kanan sedang (1.5) */
+    grid-template-columns: 2fr 1fr 1fr 1.5fr; 
+    gap: 30px;
+}
+
+.footer h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* Teks paragraf kiri */
+.footer-left p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e0e6ed; 
+}
+
+/* --- Styling Menu Navigation & Product --- */
+.footer-links {
+    list-style: none; /* Hilangin titik list */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #e0e6ed; 
+    text-decoration: none; /* Hilangin garis bawah & biru bawaan */
+    font-size: 14px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #a3c2ec; 
+    transform: translateX(5px); /* Efek geser kanan estetik */
+}
+
+/* Ikon Sosial Media */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #a3c2ec; /* Berubah warna sedikit saat disentuh mouse */
+    transform: translateY(-3px); /* Efek naik sedikit */
+}
+
+/* Bagian Kanan (Ikon & Teks Kontak) */
+.contact-info {
+    display: flex;
+    align-items: flex-start; 
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-info i {
+    font-size: 20px;
+    margin-top: 2px; 
+}
+
+.contact-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    color: #e0e6ed;
+}
+
+/* Responsif untuk Layar HP & Tablet */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Langsung tumpuk 1 baris ke bawah */
+        gap: 40px;
+    }
+}

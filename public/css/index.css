@@ -1,0 +1,406 @@
+.hero-home {
+    background:  url('\(3\)\ PT\ PSM\ Building.jpeg') center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #2B5490;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e6e6e6;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* About Snippet Section */
+.about-snippet {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    color: #2B5490;
+    margin-bottom: 10px;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background-color: #6C8EBF;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.link-arrow {
+    color: #4a7bb2;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.link-arrow:hover {
+    gap: 12px; /* Efek panah bergeser */
+    color: #2B5490;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Services Highlight Section */
+.services-highlight {
+    padding: 80px 20px;
+    background-color: #f4f7fb; 
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-header h2 {
+    font-size: 32px;
+    color: #2B5490;
+    margin-bottom: 5px;
+}
+
+
+.services-highlight .grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important; /* Paksa mutlak 4 kotak sejajar */
+    gap: 25px !important; 
+    max-width: 1200px !important; /* Dilebarin biar 4 kotak muat */
+    margin: 0 auto !important; 
+    padding: 0 20px !important;
+    align-items: stretch !important; 
+}
+
+@media (max-width: 1024px) {
+    .services-highlight .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important; 
+    }
+}
+
+.service-card {
+    background: #fff;
+    padding: 40px 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #eef4fc;
+    color: #4a7bb2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 20px auto;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    flex-grow: 1; 
+}
+
+
+/* ===== MOBILE RESPONSIVE ========= */
+@media (max-width: 768px) {
+    /*Mencegah layar bisa digeser ke kanan */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* 1. Rapiin Bagian Atas (Hero) */
+    .hero-home {
+        height: auto; 
+        padding: 120px 20px 60px; /* Kasih ruang biar gak ketutup navbar */
+    }
+    .hero-content h1 {
+        font-size: 28px; /* Judul dikecilin */
+        line-height: 1.4;
+    }
+    .hero-buttons {
+        flex-direction: column; /* Tombol numpuk ke bawah */
+        align-items: center;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Tombol menuhin layar HP biar gampang diklik */
+    }
+
+    /* 2. Rapiin Bagian Siapa Kami (About) */
+    .about-container {
+        flex-direction: column; /* Teks dan gambar numpuk ke bawah */
+        text-align: center;
+        gap: 30px;
+    }
+    .divider {
+        margin: 0 auto 20px auto; /* Garis biru pindah ke tengah */
+    }
+    .link-arrow {
+        justify-content: center; /* Link panah pindah ke tengah */
+    }
+
+    /* 3. Rapiin Tiga Kotak Layanan (Services) */
+    .services-highlight .grid-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Paksa 1000% jadi 1 baris ke bawah */
+        gap: 30px !important; /* INI PENYELAMATNYA - Jarak 50px mantap! */
+        padding: 0 20px !important;
+        width: 100% !important; 
+        box-sizing: border-box !important;
+    }
+}
+
+/* --- FACILITIES SECTION ---*/
+.facilities-section { 
+    padding: 60px 20px; 
+    background-color: #f8fafc; 
+}
+
+.tabs-header { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 40px; 
+    flex-wrap: wrap; 
+}
+
+.tab-btn {
+    padding: 12px 30px;
+    border: 2px solid #e5e7eb;
+    background: transparent;
+    color: #64748b;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Tab yang lagi aktif */
+.tab-btn.active, .tab-btn:hover {
+    background-color: #2B5490;
+    color: white;
+    border-color: #2B5490;
+}
+
+.tab-content {
+    display: none; /* Sembunyiin semua isi dulu */
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block; /* Munculin yang aktif aja */
+}
+
+/* KOTAK UTAMA FASILITAS (Udah digabung dan disetting ke tengah) */
+.facility-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    max-width: 1000px; /* Biar ngga melar pas di-zoom out */
+    margin: 0 auto;    /* Kunci di tengah layar */
+}
+
+/* FOTO FASILITAS (Ukurannya disamaratakan & anti gepeng) */
+.facility-grid img { 
+    width: 100%; 
+    height: 220px; /* Kunci tingginya biar sama semua rata */
+    object-fit: cover; /* Biar dipotong rapi secara otomatis */
+    object-position: center; 
+    border-radius: 10px; 
+}
+
+/* TEKS FASILITAS */
+.facility-text ul { 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 20px; 
+}
+
+.facility-text li { 
+    margin-bottom: 15px; 
+    font-size: 16px; 
+    color: #475569; 
+}
+
+.text-blue { 
+    color: #2B5490; 
+    margin-right: 10px; 
+}
+
+/* RESPONSIVE UNTUK HP */
+@media (max-width: 768px) {
+    .facility-grid { 
+        grid-template-columns: 1fr; /* Di HP balik numpuk atas-bawah */
+        gap: 20px;
+    }
+}
+
+/* Animasi Muncul Mulus */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== COMPANY STATS BACKGROUND STYLING ====*/
+.company-stats-bg {
+    /* Pakai foto pabrik/metal resolusi tinggi dari internet sbg contoh (nanti bisa diganti) */
+    background: linear-gradient(rgba(17, 34, 64, 0.85), rgba(17, 34, 64, 0.85)), 
+                url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+
+    padding: 120px 20px; /* Kasih ruang atas-bawah lebih lega */
+    color: #ffffff;
+    text-align: center;
+    border-top: 4px solid #2B5490;
+    border-bottom: 4px solid #2B5490;
+}
+
+.stats-container-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gaya angka besarnya (Lebih Bold & Mewah) */
+.stat-box .counter-wrap {
+    font-size: 72px; /* Digeber lebih gede lagi */
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4); /* Kasih bayangan biar angkanya pop-out */
+}
+
+/* Gaya teks kecil di bawahnya (Lebih renggang & Proporsional) */
+.stat-box p {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase; /* Huruf besar semua biar corporate banget */
+    letter-spacing: 3px; /* Jarak antar huruf dilebarin (Rahasia desain elegan) */
+    color: #e2e8f0;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .company-stats-bg {
+        background-attachment: scroll; /* Matikan efek parallax di HP biar gak berat */
+        padding: 80px 20px;
+    }
+    .stats-container-3 {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}

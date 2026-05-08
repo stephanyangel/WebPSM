@@ -1,0 +1,793 @@
+/*=========================== 
+        ABOUT US PAGE 
+  ===========================*/
+
+/* --- SECTION ABOUT INTRO --- */
+.about-intro {
+    padding: 80px 10%; /* Memberikan ruang di sisi kanan-kiri */
+    background-color: #fff;
+}
+
+.about-intro-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;         /* Membuat elemen bersampingan */
+    align-items: stretch;  /* Tinggi gambar mengikuti tinggi teks */
+    gap: 50px;             /* Jarak antara teks dan gambar */
+}
+
+.about-intro-text {
+    flex: 1.5;             /* Bagian teks lebih lebar sedikit */
+}
+
+.about-intro-text h1 {
+    font-size: 36px;
+    color: #2B5490;
+    margin-bottom: 25px;
+}
+
+.about-intro-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify;   /* Agar teks rapi rata kanan-kiri */
+}
+
+.about-intro-image {
+    flex: 1;               /* Bagian gambar */
+    border-radius: 15px;
+    overflow: hidden;      /* Memastikan gambar tidak keluar dari kotak melengkung */
+    background-color: #f0f0f0; /* Warna cadangan jika gambar belum ada */
+}
+
+.about-intro-image img {
+    width: 100%;           /* Gambar memenuhi lebar kotak */
+    height: 100%;          /* Gambar memenuhi tinggi kotak */
+    object-fit: cover;     /* Gambar tidak gepeng, akan terpotong secara rapi */
+    display: block;
+}
+
+/* Biar rapi kalau dibuka di HP */
+@media (max-width: 768px) {
+    .about-intro-content {
+        flex-direction: column; /* Teks dan gambar jadi bertumpuk atas-bawah di layar kecil */
+    }
+    .about-intro-image {
+        height: 300px; /* Batasi tinggi gambar di layar HP */
+    }
+}
+
+/* Leadership Team Section (Desain Baru) */
+.team-section {
+    background-color: #3B5B93; /* Biru korporat */
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+}
+
+.team-header {
+    margin-bottom: 40px;
+}
+
+.team-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.team-header p {
+    font-size: 16px;
+    color: #d1e0f5;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.profile-img-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #eef4fc;
+}
+
+.profile-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    color: #2B5490;
+    margin-bottom: 5px;
+}
+
+.team-card .position {
+    font-size: 14px;
+    color: #777;
+    font-weight: 500;
+}
+
+/* Visi Misi Section */
+.vision-mission-section {
+    padding: 80px 20px;
+    background-color: #f4f7fb; /* Warna biru super muda untuk membedakan dengan background putih di bawahnya */
+    display: flex;
+    justify-content: center;
+}
+
+.vm-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.vm-card {
+    flex: 1;
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Bayangan estetik */
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Kartu Naik Saat Disentuh Mouse */
+.vm-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Aksen Garis Biru Tipis di Atas Kartu */
+.vm-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #2B5490;
+}
+
+.vm-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #eef4fc;
+    color: #2B5490;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.vm-card h3 {
+    color: #2B5490;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* VISI */
+.vm-card p {
+    color: #555;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+/* MISI */
+.vm-list {
+    list-style: none; /* Hilangkan titik hitam bawaan */
+    padding: 0;
+}
+
+.vm-list li {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.6;
+}
+
+/* Icon Centang Biru */
+.vm-list li i {
+    color: #4a7bb2;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+/* --- RESPONSIVE VISI MISI UNTUK HP ---*/
+@media (max-width: 768px) {
+    .vm-container {
+        flex-direction: column; /* Numpuk ke bawah di HP */
+        gap: 30px;
+    }
+    .vm-card {
+        padding: 40px 25px;
+    }
+}
+
+/* Timeline Section */
+.history-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.history-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.history-header h2 {
+    color: #2B5490;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* --- GARIS JALAN (THE TRACK & FILL) --- */
+.timeline-track {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #e2e8f0; /* Garis abu-abu mati */
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.timeline-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #2B5490; /* Garis biru yang mengalir */
+    height: 0%; /* Diatur oleh JavaScript nanti */
+    border-radius: 4px;
+}
+
+/* --- KOTAK KONTEN & TITIK --- */
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%; /* Setengah layar */
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-item.right {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%; /* Setengah layar kanan */
+}
+
+/* Titik Angka di Tengah (01, 02, dst) */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #2B5490;
+    color: white;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    box-shadow: 0 0 0 4px #eef4fc;
+}
+
+.timeline-content {
+    background: #f8fafc;
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 85%; /* Lebar kotak teks */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    border-top: 4px solid #2B5490;
+}
+
+.timeline-year {
+    display: inline-block;
+    background-color: #2B5490;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.timeline-content p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* --- RESPONSIVE UNTUK HP --- */
+@media (max-width: 768px) {
+    .timeline-track {
+        left: 30px; /* Garis pindah ke kiri */
+        transform: none;
+    }
+    
+    .timeline-item, .timeline-item.right {
+        justify-content: flex-start;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+
+    .timeline-dot {
+        left: 30px;
+        transform: translateX(-50%);
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+}
+
+/* Responsif untuk About Us */
+@media (max-width: 768px) {
+    .about-intro-content {
+        flex-direction: column;
+    }
+    .about-intro-image {
+        min-height: 250px;
+    }
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .vm-content h2 {
+        font-size: 32px;
+    }
+    .vm-content p, .vm-content ul {
+        font-size: 16px;
+    }
+}
+
+/* === Capabilities & Certifications ===*/
+/* =========================================
+   CAPABILITIES & CERTIFICATIONS STYLING
+   ========================================= */
+.capabilities-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+
+.cap-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cap-header h2 {
+    font-size: 36px;
+    color: #2B5490;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.cap-header p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Kartu */
+.cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* Desain Kartu */
+.cap-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 40px 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cap-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(43, 84, 144, 0.1);
+    border-color: #2B5490; /* Border biru menyala pas disorot */
+}
+
+/* Ikon di atas kartu */
+.cap-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #eef4fc;
+    color: #2B5490;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.cap-card h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Label Penerbit Sertifikat */
+.cap-issuer {
+    display: inline-block;
+    background-color: #2B5490;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.cap-card p {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Biar posisi cap-details selalu sejajar di bawah */
+}
+
+/* Kotak abu-abu kecil di dalam kartu buat naruh daftar nama/dokumen */
+.cap-details {
+    background-color: #ffffff;
+    border: 1px dashed #cbd5e1;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.cap-details strong {
+    display: block;
+    font-size: 13px;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+.cap-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+    color: #475569;
+    font-size: 13.5px;
+}
+
+.cap-details ul li {
+    margin-bottom: 5px;
+}
+
+/* Khusus list nama yg banyak, dibagi 2 kolom biar rapi */
+.two-column-list {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+/* --- TOMBOL G-DRIVE DI DALAM KARTU --- */
+.btn-gdrive-card {
+    margin-top: 20px; /* Ngasih jarak dari kotak detail abu-abu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #2B5490;
+    border: 2px solid #2B5490;
+    padding: 12px;
+    border-radius: 8px; /* Sudutnya dibikin senada sama kotak detail */
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%; /* Biar tombolnya melebar penuh dan rapi */
+    box-sizing: border-box;
+}
+
+.btn-gdrive-card i {
+    font-size: 18px;
+    background: linear-gradient(to right, #FFD04B, #1EA362, #4688F4); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat tombol disorot mouse */
+.btn-gdrive-card:hover {
+    background-color: #2B5490;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(43, 84, 144, 0.2);
+}
+
+.btn-gdrive-card:hover i {
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* === CODE & STANDARD KNOWLEDGE STYLING ==== */
+.standards-section {
+    padding: 80px 20px;
+    background-color: #f4f7fb; 
+}
+
+.standards-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.standards-header h2 {
+    font-size: 36px;
+    color: #2B5490;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.standards-header p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Kartu Standar */
+.standards-grid {
+    display: grid;
+    /* Jurus Auto-Fit biar otomatis rapi di HP, Tablet, maupun Laptop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* Desain Kartu */
+.std-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #2B5490; /* Aksen garis biru tebal di atas kartu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.std-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(43, 84, 144, 0.15);
+}
+
+/* Label/Badge di dalam kartu */
+.std-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak dilonggarkan sedikit biar pas dengan logo gambar */
+    margin-bottom: 15px;
+}
+
+/* 👇 INI YANG BARU: Styling khusus untuk Logo Asli (Anti Gepeng) 👇 */
+.std-logo {
+    height: 45px; /* Bisa dibesarkan/dikecilkan sesuai selera */
+    width: auto;
+    max-width: 120px; /* Batas lebar biar teksnya gak kegeser parah */
+    object-fit: contain; 
+    border-radius: 4px; 
+}
+
+.std-badge h3 {
+    font-size: 28px;
+    color: #1e293b;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.std-subtitle {
+    font-size: 14px;
+    color: #4a7bb2;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* List Checkmark Standar */
+.std-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.std-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #475569;
+}
+
+/* 👇 INI Ikon Centang Hijau (Tetap Aman!) 👇 */
+.std-list i {
+    color: #1EA362; 
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.std-list span strong {
+    color: #1e293b;
+}
+
+/* === ENGINEERING CAPABILITIES STYLING === */
+.engineering-section {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Latar belakang putih murni biar selang-seling sama bagian sebelumnya */
+}
+
+.eng-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.eng-header h2 {
+    font-size: 36px;
+    color: #2B5490;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.eng-header p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.eng-grid {
+    display: grid;
+    /* Dibagi 2 kotak saja biar fokus dan elegan */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1000px; /* Sengaja lebih sempit dari 1200px biar kotaknya ada di tengah */
+    margin: 0 auto;
+}
+
+.eng-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 50px 40px;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eng-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(43, 84, 144, 0.1);
+    border-color: #2B5490;
+}
+
+/* Lingkaran Ikon besar di tengah kotak */
+.eng-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #eef4fc;
+    color: #2B5490;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin: 0 auto 25px auto;
+}
+
+.eng-card h3 {
+    font-size: 24px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.eng-card p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* --- Tampilan "Software" berbentuk Badge/Pill --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.tech-badge {
+    background-color: #ffffff;
+    color: #2B5490;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 30px; /* Bikin ujungnya bulat (pill shape) */
+    border: 1px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+/* Efek menyala biru pas nama software-nya disorot mouse */
+.tech-badge:hover {
+    background-color: #2B5490;
+    color: #ffffff;
+    border-color: #2B5490;
+    transform: translateY(-2px);
+}
+
+.tech-badge i {
+    font-size: 16px;
+}

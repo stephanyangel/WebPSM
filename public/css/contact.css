@@ -1,0 +1,259 @@
+/* =========================================
+   CONTACT US PAGE
+   ========================================= */
+
+/* Bagian Biru Atas */
+.contact-hero {
+    background-color: #6C8EBF; /* Warna biru sesuai desain */
+    color: white;
+    text-align: center;
+    padding: 80px 20px 150px; /* Padding bawah dibikin besar (150px) agar ada ruang untuk kotak */
+}
+
+.contact-hero h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* 4 Titik Putih di bawah judul */
+.hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.hero-dots span {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.contact-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #eef4fc;
+}
+
+/* Bagian Kotak Informasi */
+.contact-cards {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Ini rahasia efek kotaknya menimpa area biru */
+    margin-top: -80px; 
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.c-card {
+    background-color: white;
+    padding: 40px 25px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.c-card i {
+    font-size: 30px;
+    color: #2B5490;
+    margin-bottom: 20px;
+}
+
+.c-card h3 {
+    font-size: 20px;
+    color: #2B5490;
+    margin-bottom: 15px;
+}
+
+.c-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.c-card a {
+    color: #2B5490;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.c-card a:hover {
+    color: #6C8EBF;
+}
+
+/* =========================================
+   CONTACT US SECTION (SPLIT CARD STYLE)
+   ========================================= */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #f8fafc; /* Warna background luar super soft */
+    display: flex;
+    justify-content: center;
+}
+
+/* Kotak Pembungkus Utama (Warna Putih) */
+.contact-wrapper {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06); /* Bayangan estetik */
+    padding: 15px; /* Memberi frame sedikit untuk kotak biru */
+}
+
+/* --- KIRI: Form Box --- */
+.contact-form-box {
+    flex: 1.6; /* Porsinya lebih lebar dari kotak biru */
+    padding: 40px 50px;
+}
+
+.contact-form-box h2 {
+    color: #2B5490;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.contact-form-box p {
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.form-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px; /* Bentuk membulat ala referensi */
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group textarea {
+    border-radius: 20px;
+    resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #2B5490; /* Biru PT PSM pas diklik */
+    box-shadow: 0 0 0 3px rgba(43, 84, 144, 0.1);
+}
+
+/* Input No HP dengan Kode Negara */
+.phone-input {
+    display: flex;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.phone-input:focus-within {
+    border-color: #2B5490;
+    box-shadow: 0 0 0 3px rgba(43, 84, 144, 0.1);
+}
+
+.phone-input select {
+    border: none;
+    background: transparent;
+    padding: 0 10px 0 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    outline: none;
+    border-right: 1px solid #e2e8f0;
+}
+
+.phone-input input {
+    border: none;
+    border-radius: 0;
+    padding-left: 15px;
+}
+.phone-input input:focus {
+    box-shadow: none; /* Hilangin shadow dobel */
+}
+
+/* Tombol Submit */
+.submit-row {
+    display: flex;
+    justify-content: flex-end; /* Posisi ke kanan */
+    margin-top: 30px;
+}
+
+.btn-submit {
+    background-color: #2B5490;
+    color: #ffffff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1e3a66;
+    transform: translateY(-2px);
+}
+
+
+/* Bagian Peta (Map) */
+.map-section {
+    margin-top: 60px; /* Jarak dari kotak ke peta */
+    width: 100%;
+}
+
+.map-section iframe {
+    display: block; /* Menghilangkan jeda putih di bawah peta */
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+    .contact-cards {
+        flex-direction: column;
+        margin-top: -40px;
+    }
+    .contact-hero {
+        padding: 60px 20px 80px;
+    }
+}
+
+
+
